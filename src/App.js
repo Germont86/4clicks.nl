@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import GeneratePage from './pages/GeneratePage';
+import Grafiek from './pages/Grafiek';
+import MappingUI2 from './MappingUI2';
+import ImportPage from './pages/ImportPage';
+import About from './pages/About';
+import Products from './pages/Products';
+import Resources from './pages/Resources';
+import Objectives from './pages/Objectives'; // Nieuwe import
+import Team from './pages/Team'; // Nieuwe import
+import Vacancies from './pages/Vacancies'; // Nieuwe import
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/generate" element={<GeneratePage />} />
+        <Route path="/grafiek" element={<Grafiek />} />
+        <Route path="/mapping" element={<MappingUI2 />} />
+        <Route path="/import" element={<ImportPage />} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/objectives" element={<Objectives />} /> {/* Nieuwe route */}
+        <Route path="/team" element={<Team />} /> {/* Nieuwe route */}
+        <Route path="/vacancies" element={<Vacancies />} /> {/* Nieuwe route */}
+      </Routes>
+    </Router>
   );
 }
 
